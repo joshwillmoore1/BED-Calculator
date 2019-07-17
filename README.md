@@ -8,7 +8,7 @@ For details behind the calculator's operation and usage please see:
 Changes in the retreatment radiation tolerance of the spinal cord with time after the initial treatment. T. E. Woolley, J. Belmonte-Beitia, G. F. Calvo, J. W. Hopewell, E. A. Gaffney and B. Jones. 
 Int J Radiai Biol xx, xxx-xxx, 2108
 
-Spinal cord re-treatments using photon and proton based radiotherapy: LQ-derived tolerance doses. B .Jones, J .W . Hopewell
+Spinal cord re-treatments using photon and proton based radiotherapy: LQ-derived tolerance doses. B .Jones, J .W . Hopewell.
 Euro J Medical Phys
 
 TERMS AND CONDITIONS
