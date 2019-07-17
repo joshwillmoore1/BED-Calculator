@@ -22,16 +22,18 @@ By accessing and using the GUI you accept the following conditions:
 
 Previous GUI Versions (Original GUI)
 
-Updated versions of the GUI will also been made available using the following supplementary link,
+Updated versions of the original GUI will also been made available using the following supplementary link,
 
 http://thomaswoolley.co.uk/codes
 
-Any computational issues related to the use of the GUI can be reported on the appropriate GitHub page under "issues". Note Thomas E. Woolley is a mathematician and is unable to supply any help on any particular medical application. These should be directed to the local clinical specialist of the user.
 
 Current GUI Versions
 
-Updated versions of the GUI will also been made available using the following supplementary link,
+Updated versions of the current GUI will also been made available using the following supplementary link,
 
+https://github.com/joshwillmoore1/BED-Calculator
+
+Any computational issues related to the use of the GUI can be reported on the appropriate GitHub page under "issues". Note Thomas E. Woolley and Joshua W. Moore are mathematicians and are unable to supply any help on any particular medical application. These should be directed to the local clinical specialist of the user.
 
 
 
@@ -44,3 +46,4 @@ GETTING STARTED
 5)The extracted file contains the GUI application, double-click to start.
 
 KNOWN ISSUES
+No known issues to date.
