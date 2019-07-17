@@ -41,9 +41,9 @@ GETTING STARTED
 
 1) Identify whether your Windows System architecture is 32 or 64 bit.
 2) Download the zip file which contains the GUI.
-3)Check if you have Java installed on the computer - this can be done by opening the console (Windows+R then type cmd) or the equivalent for your operating system. In the console type "java -version" and press enter. If java is installed a version number will be displayed, if not then download the environment from this link  - https://java.com/en/download/manual.jsp.  
-4)Once the Java environment is installed on your computer, extract the contents of the zip file to a location of your choice. 
-5)The extracted file contains the GUI application, double-click to start.
+3) Check if you have Java installed on the computer - this can be done by opening the console (Windows+R then type cmd) or the equivalent for your operating system. In the console type "java -version" and press enter. If java is installed a version number will be displayed, if not then download the environment from this link  - https://java.com/en/download/manual.jsp.  
+4) Once the Java environment is installed on your computer, extract the contents of the zip file to a location of your choice. 
+5) The extracted file contains the GUI application, double-click to start.
 
 KNOWN ISSUES
 No known issues to date.
