@@ -1,0 +1,11 @@
+Java version and system requirements:
+
+IDE Version: NetBeans IDE 8.2 (Build 201609300101)
+Updates: NetBeans IDE is updated to version NetBeans 8.2 Patch 2
+Java: 1.8.0_191; Java HotSpot(TM) 64-Bit Server VM 25.191-b12
+Runtime: Java(TM) SE Runtime Environment 1.8.0_191-b12
+
+Minimum required CPU: i3/Ryzen 3 @ 1.6GHz
+Minimum RAM: 4gb
+OS: Windows 7/10 or macOS Mojave (Linux untested)
+
