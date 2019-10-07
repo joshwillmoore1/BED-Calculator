@@ -48,4 +48,8 @@ GETTING STARTED
 5) The extracted file contains the GUI application, double-click to start.
 
 KNOWN ISSUES
-No known issues to date.
+
+1.Some subscript notation may not be displayed. If this is the case, please install the provide font in the font file and restart the GUI. If the B̅E̅D̅ notation is not being displayed and you're using a windows OS, try using the MAC version of the GUI.
+2. Windows users - IF DOUBLE-CLICK DOES NOT START APPLICATION then please check the Java version installed on the PC is the same version in the registry. This can be done by pressing windows key+R and searching for "regedit". Then navigate down the 'CLASSES_ROOT' file to find the 'jarfile' folder. Continue to open this file until the file 'command' is reached. 
+The text in this file should then be edited to the version that is installed in either you 'program files' or 'program files x86'. Locate the bin file and open (e.g. C:\Program Files\Java\jdk1.8.0_191\bin). Copy this address and insert it into the registry 'command' file text in the appropriate position ( e.g. "C:\Program Files\Java\jdk1.8.0_191\bin\javaw.exe" -jar "%1" %* ). Press ok and close registry. The app should now open on double-click.
+
