@@ -5,6 +5,8 @@ BED CALCULATOR
 
 For details behind the calculator's operation and usage please see:
 
+Further development of spinal cord re-treatment dose estimation: including radiotherapy with protons and light ions. J. W. Moore,  T. E. Woolley, B .Jones, J .W . Hopewell xxxx
+
 Changes in the retreatment radiation tolerance of the spinal cord with time after the initial treatment. T. E. Woolley, J. Belmonte-Beitia, G. F. Calvo, J. W. Hopewell, E. A. Gaffney and B. Jones. 
 Int J Radiai Biol xx, xxx-xxx, 2108
 
