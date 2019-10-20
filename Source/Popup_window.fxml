@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" cacheShape="false" centerShape="false" prefHeight="583.0" prefWidth="503.0" scaleShape="false" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="firstscene.Popup_windowController">
+    <stylesheets>
+        <URL value="@LineStyle.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane prefHeight="543.0" prefWidth="503.0">
+         <children>
+            <SubScene height="491.0" width="486.0">
+              <root>
+                <Region />
+              </root>
+            </SubScene>
+            <Label fx:id="label1" alignment="TOP_LEFT" layoutX="28.0" layoutY="6.0" prefHeight="575.0" prefWidth="448.0" text="Label" />
+            <Label fx:id="LABEL3" layoutX="3.0" layoutY="364.0" opacity="0.0" prefHeight="93.0" prefWidth="486.0" text="Label" translateY="20.0" />
+            <Label fx:id="LABEL2" layoutX="28.0" layoutY="337.0" opacity="0.0" prefHeight="21.0" prefWidth="448.0" text="Label" translateY="10.0" />
+            <Label layoutX="1.0" layoutY="337.0" opacity="0.0" text="BED" translateY="10.0" underline="true" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

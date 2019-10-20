@@ -1,0 +1,19 @@
+/*
+Any computational issues related to the use of the GUI can 
+be reported on the appropriate GitHub page under "issues". 
+ Note Thomas E. Woolley and Joshua W. Moore are mathematicians
+ and are unable to supply any help on any particular medical application.
+These should be directed to the local clinical specialist of the user.
+*/
+/* 
+    Created on : 31-Jul-2019, 19:15:05
+    Author     : moore
+*/
+
+.root{
+
+  -fx-font-family: "Quivira";
+    -fx-font-size: 12pt; /* 9pt for mac - 12pt for windows*/
+    
+    
+}

@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane fx:id="TabPane_1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="firstscene.FXMLDocumentController">
+   <tabs>
+      <Tab fx:id="tab1" closable="false" text="Photon Initial - Photon Retreatment">
+         <content>
+            <AnchorPane id="AnchorPane" fx:id="Anchor_1" cacheShape="false" centerShape="false" prefHeight="560.0" prefWidth="1085.0" scaleShape="false">
+               <children>
+                  <Rectangle fx:id="rect_1" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="57.0" layoutX="483.0" layoutY="419.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="169.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2197ff00" height="124.0" layoutX="763.0" layoutY="205.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" width="266.0" />
+                  <ScatterChart fx:id="chart1" layoutY="14.0" prefHeight="350.0" prefWidth="350.0">
+                    <xAxis>
+                      <NumberAxis fx:id="CatAxis1" autoRanging="false" label="BED_1(%)" lowerBound="0" side="BOTTOM" tickUnit="10" upperBound="100" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="NumAxis1" autoRanging="false" label="BED_2(%)" lowerBound="0" side="LEFT" tickUnit="10" upperBound="100" />
+                    </yAxis>
+                     <opaqueInsets>
+                        <Insets bottom="10.0" left="10.0" right="10.0" />
+                     </opaqueInsets>
+                  </ScatterChart>
+                  <LineChart fx:id="chart2" animated="false" layoutY="14.0" opacity="0.4" prefHeight="350.0" prefWidth="350.0">
+                    <xAxis>
+                      <NumberAxis fx:id="CatAxis2" autoRanging="false" label="BED1" lowerBound="0" side="BOTTOM" tickUnit="10" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="NumAxis2" autoRanging="false" label="BED_2(%)" lowerBound="0" side="LEFT" tickUnit="10" />
+                    </yAxis>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </LineChart>
+                  <Button fx:id="RdntBtn3" layoutX="170.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleRdntBtn1Action" prefHeight="0.0" prefWidth="69.0" text="Rodent Data">
+                     <font>
+                        <Font size="8.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <TextField fx:id="RiskOfMyel" alignment="CENTER" layoutX="364.0" layoutY="14.0" prefHeight="39.0" prefWidth="84.0" text="0.1" />
+                  <TextField fx:id="initalDose" alignment="CENTER" layoutX="364.0" layoutY="80.0" prefHeight="39.0" prefWidth="84.0" text="40" />
+                  <Text fx:id="Label_InitDose" fontSmoothingType="LCD" layoutX="455.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Initial total dose, D(init), (Gy)" wrappingWidth="249.205078125" />
+                  <Text fx:id="numFrac_text_1" layoutX="454.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of initial fractions, n" wrappingWidth="252.205078125" />
+                  <TextField fx:id="NumFrac" alignment="CENTER" layoutX="364.0" layoutY="149.0" prefHeight="39.0" prefWidth="84.0" text="20" />
+                  <Text fx:id="Label_initfrac" layoutX="455.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Initial dose per fraction (Gy), d = D(init)/n" wrappingWidth="343.205078125" />
+                  <Text fx:id="num_ret_frac_1" layoutX="454.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of retreatment fractions, n(r)" wrappingWidth="403.0" />
+                  <TextField fx:id="RetreatFrac" alignment="CENTER" layoutX="364.0" layoutY="281.0" prefHeight="39.0" prefWidth="84.0" text="20" />
+                  <Text fx:id="tissue_text" layoutX="454.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tissue sensitivity, a/b (Gy)" wrappingWidth="226.205078125" />
+                  <Text layoutX="364.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" wrappingWidth="84.0" />
+                  <Button fx:id="Calculate" disable="true" layoutX="479.0" layoutY="418.0" mnemonicParsing="false" opacity="0.3" prefHeight="58.0" prefWidth="176.0" text="Calculate">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Text fx:id="s0_text" layoutX="873.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="s0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="s1_text" layoutX="863.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="s1" textAlignment="CENTER" wrappingWidth="36.3408203125">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="Bed_over_1" layoutX="868.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BED" translateY="3.0" />
+                  <Text layoutX="863.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of years " translateY="-4.0" wrappingWidth="168.6279296875" />
+                  <Text layoutX="863.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Percentage" wrappingWidth="125.0" />
+                  <Text fx:id="nom_text" layoutX="972.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nominal tolerated BED(R%) (Gy)" wrappingWidth="256.205078125" />
+                  <Text layoutX="972.0" layoutY="486.0" strokeType="OUTSIDE" strokeWidth="0.0" text="for retreatment. Value also used for the" wrappingWidth="368.833984375" />
+                  <Text fx:id="Nominaltext" layoutX="919.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="69.0" />
+                  <Button fx:id="reset" layoutX="505.0" layoutY="514.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="125.0" text="Reset Values">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label fx:id="out" alignment="CENTER" contentDisplay="CENTER" layoutX="1049.0" layoutY="408.0" prefHeight="39.0" prefWidth="69.0" textAlignment="CENTER" />
+                  <Text layoutX="458.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Risk of myelopathy, r (%)" wrappingWidth="203.0" />
+                  <Text fx:id="p_value_1" layoutX="454.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-style: italic;" text="p-value = 0.001" translateX="3.0" wrappingWidth="191.205078125" />
+                  <Text fx:id="eqn1_text" layoutX="47.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="eqn1" wrappingWidth="315.205078125" />
+                  <Text fx:id="eqn2_text" layoutX="47.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="eqn2" wrappingWidth="357.205078125" />
+                  <Text fx:id="eqn3_text" layoutX="47.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" text="eqn3" wrappingWidth="158.205078125" />
+                  <Button fx:id="key" layoutX="1240.0" layoutY="525.0" mnemonicParsing="false" text="Notation">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Text fx:id="initfrac_text" layoutX="381.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="51.0" />
+                  <Text fx:id="BEDinit_text" layoutX="40.0" layoutY="413.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="58.0" />
+                  <Text fx:id="BED1_text" layoutX="171.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" />
+                  <Text fx:id="BEDR_text1" layoutX="276.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" />
+                  <Text fx:id="BEDret_text" layoutX="44.0" layoutY="466.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="51.0" />
+                  <Text fx:id="BED2_text" layoutX="171.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" />
+                  <Text fx:id="BEDR2_TEXT" layoutX="280.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" />
+                  <Text fx:id="Dret_text" layoutX="354.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="38.0" />
+                  <Text layoutX="863.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="before next dose, t" translateY="-4.0" wrappingWidth="168.6279296875" />
+                  <Text layoutX="864.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="conservative factor, C" wrappingWidth="176.0" />
+                  <Text layoutX="972.0" layoutY="506.0" strokeType="OUTSIDE" strokeWidth="0.0" text="primary treatment, see publication." wrappingWidth="357.205078125" />
+                  <Text fx:id="warn_bed" fill="#f80000" layoutX="47.0" layoutY="531.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WARNING: INITIAL DOSE OVER TOLERANCE" underline="true" visible="false" wrappingWidth="357.205078125" />
+                  <Text fx:id="p_high" fill="#f50808" layoutX="47.0" layoutY="532.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WARNING: RISK GREATER THAN 99.9%" underline="true" visible="false" wrappingWidth="357.205078125" />
+                  <Text fx:id="p_low" fill="#f81111" layoutX="47.0" layoutY="531.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WARNING: RISK LESS THAN 0.001%" underline="true" visible="false" wrappingWidth="357.205078125" />
+                  <TextField fx:id="NumOfYears_1" alignment="CENTER" layoutX="775.0" layoutY="214.0" prefHeight="39.0" prefWidth="84.0" promptText="2" />
+                  <TextField fx:id="Percentage_1" alignment="CENTER" layoutX="775.0" layoutY="281.0" prefHeight="39.0" prefWidth="84.0" promptText="0" />
+                  <Text fx:id="Num_Warn_1" layoutX="775.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Must be a number within [0,5]" visible="false" wrappingWidth="272.6708984375" />
+                  <Text fx:id="Per_Warn_1" layoutX="775.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number must be within [0,20]" visible="false" wrappingWidth="271.6708984375" />
+                  <TextField fx:id="bed_1" alignment="CENTER" layoutX="775.0" layoutY="149.0" prefHeight="39.0" prefWidth="84.0" text="35" />
+                  <Text fx:id="bed_warn" layoutX="775.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Must be a number within [0,45]" visible="false" wrappingWidth="272.6708984375" />
+                  <TextField fx:id="s1_1" alignment="CENTER" layoutX="775.0" layoutY="80.0" prefHeight="39.0" prefWidth="84.0" text="0.1" />
+                  <Text fx:id="s1_warn" layoutX="774.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Must be a number within [0.01,1]" visible="false" wrappingWidth="272.6708984375" />
+                  <TextField fx:id="s0_1" alignment="CENTER" layoutX="775.0" layoutY="14.0" prefHeight="39.0" prefWidth="84.0" text="0.15" />
+                  <Text fx:id="s0_warn" layoutX="775.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Must be a number within [0.03,1]" visible="false" wrappingWidth="272.6708984375" />
+                  <Label fx:id="run_1" alignment="CENTER" layoutX="542.0" layoutY="480.0" prefHeight="21.0" prefWidth="51.0" text="Done" textAlignment="CENTER" translateY="2.0" visible="false" />
+                  <Text fx:id="ret_frac_out_1" layoutX="200.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" />
+                  <Text fx:id="final_1" layoutX="235.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <Text fx:id="final_last_1" layoutX="400.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab fx:id="tab2" closable="false" text="Photon Initial - Proton Retreatment">
+         <content>
+            <AnchorPane id="AnchorPane" fx:id="Anchor_2" cacheShape="false" centerShape="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="560.0" prefWidth="1347.0" scaleShape="false">
+               <children>
+                  <Rectangle fx:id="rect_2" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="57.0" layoutX="483.0" layoutY="417.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="169.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2197ff00" height="124.0" layoutX="1037.0" layoutY="209.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" width="266.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="57.0" layoutX="722.0" layoutY="276.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" width="312.0" />
+                  <ScatterChart fx:id="chart1_2" layoutY="14.0" prefHeight="350.0" prefWidth="350.0">
+                     <opaqueInsets>
+                        <Insets bottom="10.0" left="10.0" right="10.0" />
+                     </opaqueInsets>
+                     <xAxis>
+                        <NumberAxis fx:id="CatAxis12" autoRanging="false" label="BED_1(%)" lowerBound="0" side="BOTTOM" tickUnit="10" upperBound="100" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis fx:id="NumAxis12" autoRanging="false" label="BED_2(%)" lowerBound="0" side="LEFT" tickUnit="10" upperBound="100" />
+                     </yAxis>
+                  </ScatterChart>
+                  <LineChart fx:id="chart2_2" animated="false" layoutY="14.0" opacity="0.4" prefHeight="350.0" prefWidth="350.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <xAxis>
+                        <NumberAxis fx:id="CatAxis22" autoRanging="false" label="BED1" lowerBound="0" side="BOTTOM" tickUnit="10" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis fx:id="NumAxis22" autoRanging="false" label="BED_2(%)" lowerBound="0" side="LEFT" tickUnit="10" />
+                     </yAxis>
+                  </LineChart>
+                  <Button fx:id="RdntBtn3_2" layoutX="170.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleRdntBtn2Action" prefHeight="0.0" prefWidth="69.0" text="Rodent Data">
+                     <font>
+                        <Font size="8.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <TextField fx:id="RiskOfMyel_2" alignment="CENTER" layoutX="354.0" layoutY="14.0" prefHeight="39.0" prefWidth="84.0" text="0.1" />
+                  <TextField fx:id="initalDose_2" alignment="CENTER" layoutX="354.0" layoutY="80.0" prefHeight="39.0" prefWidth="84.0" text="40" />
+                  <Text fx:id="Label_InitDose_2" fontSmoothingType="LCD" layoutX="445.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Initial total dose, D(init), (Gy)" wrappingWidth="249.205078125" />
+                  <Text fx:id="numFrac_text_2" layoutX="444.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of initial fractions, n" wrappingWidth="234.205078125" />
+                  <TextField fx:id="NumFrac_2" alignment="CENTER" layoutX="354.0" layoutY="149.0" prefHeight="39.0" prefWidth="84.0" text="20" />
+                  <Text fx:id="Label_initfrac_2" layoutX="445.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Initial dose per fraction (Gy), d = D(init)/n" wrappingWidth="343.205078125" />
+                  <Text fx:id="num_ret_frac_2" layoutX="444.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of retreatment fractions, n(r)" wrappingWidth="403.0" />
+                  <Text fx:id="tissue_text_2" layoutX="444.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tissue sensitivity, a/b (Gy)" wrappingWidth="226.205078125" />
+                  <Text layoutX="354.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" wrappingWidth="84.0" />
+                  <Button fx:id="Calculate_2" disable="true" layoutX="479.0" layoutY="418.0" mnemonicParsing="false" opacity="0.3" prefHeight="58.0" prefWidth="176.0" text="Calculate">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Text layoutX="1139.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of years " translateX="2.0" wrappingWidth="168.6279296875" />
+                  <Text layoutX="1143.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Percentage" wrappingWidth="125.0" />
+                  <Text fx:id="nom_text_2" layoutX="823.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estimated RBE for proton retreatment" translateY="-2.0" wrappingWidth="153.205078125" />
+                  <Text fx:id="Nominaltext31" layoutX="919.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="69.0" />
+                  <Button fx:id="reset_2" layoutX="505.0" layoutY="514.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="125.0" text="Reset Values">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label fx:id="out_2" alignment="CENTER" contentDisplay="CENTER" layoutX="743.0" layoutY="349.0" prefHeight="39.0" prefWidth="69.0" textAlignment="CENTER" />
+                  <Text layoutX="444.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Risk of myelopathy, r (%)" wrappingWidth="203.0" />
+                  <Text fx:id="p_value_2" layoutX="444.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-style: italic;" text="p-value = 0.001" wrappingWidth="191.205078125" />
+                  <Text fx:id="eqn1_text_2" layoutX="47.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="eqn1" wrappingWidth="315.205078125" />
+                  <Text fx:id="eqn2_text_2" layoutX="47.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="eqn2" wrappingWidth="357.205078125" />
+                  <Text fx:id="eqn3_text_2" layoutX="47.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" text="eqn3" wrappingWidth="161.205078125" />
+                  <Button fx:id="key_2" layoutX="1240.0" layoutY="525.0" mnemonicParsing="false" text="Notation">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Text fx:id="initfrac_text_2" layoutX="371.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="51.0" />
+                  <Text fx:id="BEDinit_text_2" layoutX="40.0" layoutY="413.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="58.0" />
+                  <Text fx:id="BED1_text_2" layoutX="171.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" />
+                  <Text fx:id="BEDR_text_2" layoutX="276.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" />
+                  <Text fx:id="BEDret_text_2" layoutX="44.0" layoutY="466.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="51.0" />
+                  <Text fx:id="BED2_text_2" layoutX="171.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" />
+                  <Text fx:id="BEDR2_TEXT_2" layoutX="280.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" />
+                  <Text layoutX="1139.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="before next dose, t" translateX="2.0" translateY="1.0" wrappingWidth="168.6279296875" />
+                  <Text layoutX="1143.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="conservative factor, C" wrappingWidth="176.0" />
+                  <Text fx:id="warn_bed_2" fill="#f80000" layoutX="47.0" layoutY="531.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WARNING: INITIAL DOSE OVER TOLERANCE" underline="true" visible="false" wrappingWidth="357.205078125" />
+                  <Text fx:id="p_high_2" fill="#f50808" layoutX="47.0" layoutY="532.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WARNING: RISK GREATER THAN 99.9%" underline="true" visible="false" wrappingWidth="357.205078125" />
+                  <Text fx:id="p_low_2" fill="#f81111" layoutX="47.0" layoutY="531.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WARNING: RISK LESS THAN 0.001%" underline="true" visible="false" wrappingWidth="357.205078125" />
+                  <CheckBox fx:id="RBE_CHECKBOX_2" alignment="CENTER" layoutX="766.0" layoutY="23.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="261.0" text="Fix retreatment RBE at 1.1" textAlignment="CENTER" />
+                  <TextField fx:id="DHIGH_2" alignment="CENTER" layoutX="735.0" layoutY="285.0" prefHeight="39.0" prefWidth="84.0" promptText="2" />
+                  <Text fx:id="d_hi_2" layoutX="823.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="d_hi (Gy)" translateY="-3.0" wrappingWidth="213.6708984375" />
+                  <TextField fx:id="letx_2" alignment="CENTER" layoutX="735.0" layoutY="149.0" prefHeight="39.0" prefWidth="84.0" text="1" />
+                  <Text fx:id="letx_text_2" layoutX="823.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LET_x (KeV/um)" wrappingWidth="215.6708984375" />
+                  <TextField fx:id="letu_2" alignment="CENTER" layoutX="735.0" layoutY="81.0" prefHeight="39.0" prefWidth="84.0" text="30.5" />
+                  <Text fx:id="letu_text_2" layoutX="823.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LET_U (KeV/um)" wrappingWidth="180.0380859375" />
+                  <Text fx:id="ProDose_2" boundsType="LOGICAL_VERTICAL_CENTER" layoutX="358.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" />
+                  <TextField fx:id="NumOfYears_2" alignment="CENTER" layoutX="1050.0" layoutY="219.0" prefHeight="39.0" prefWidth="84.0" promptText="2" />
+                  <TextField fx:id="Percentage_2" alignment="CENTER" layoutX="1050.0" layoutY="285.0" prefHeight="39.0" prefWidth="84.0" promptText="0" translateX="1.0" />
+                  <Text fx:id="letu_warn_2" layoutX="720.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Must be a postive number" translateX="12.0" visible="false" wrappingWidth="272.6708984375" />
+                  <Text fx:id="Per_Warn_2" layoutX="1043.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number must be within [0,20]" visible="false" wrappingWidth="271.6708984375" />
+                  <Label fx:id="run_2" alignment="CENTER" layoutX="542.0" layoutY="481.0" prefHeight="21.0" prefWidth="51.0" text="Done" textAlignment="CENTER" visible="false" />
+                  <TextField fx:id="letc_2" alignment="CENTER" layoutX="735.0" layoutY="219.0" prefHeight="39.0" prefWidth="84.0" text="0.22" />
+                  <Text fx:id="letc_text_2" layoutX="823.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LET_C(KeV/um)" translateY="-4.0" wrappingWidth="210.79443359375" />
+                  <Text fx:id="Num_Warn_2" layoutX="1037.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number must be within [0,5]" visible="false" wrappingWidth="271.6708984375" />
+                  <Text fx:id="letc_warn_2" layoutX="745.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number must be within [0.2,0.6]" visible="false" wrappingWidth="271.6708984375" />
+                  <Text fx:id="letx_warn_2" layoutX="745.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Must be a postive number" visible="false" wrappingWidth="245.6708984375" />
+                  <Label fx:id="RETFRAC_WARN_2" layoutX="47.0" layoutY="518.0" prefHeight="21.0" prefWidth="408.0" text="WARNING: RETREATMENT FRACTION LESS THAN ONE" textFill="RED" underline="true" visible="false" />
+                  <TextField fx:id="s0_2" alignment="CENTER" layoutX="1050.0" layoutY="14.0" prefHeight="39.0" prefWidth="84.0" text="0.15" />
+                  <Text fx:id="s0_text_2" layoutX="1141.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="s0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="s1_2" alignment="CENTER" layoutX="1050.0" layoutY="81.0" prefHeight="39.0" prefWidth="84.0" text="0.1" />
+                  <Text fx:id="s1_text_2" layoutX="1130.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="s1" textAlignment="CENTER" wrappingWidth="36.3408203125">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="bed_2" alignment="CENTER" layoutX="1050.0" layoutY="149.0" prefHeight="39.0" prefWidth="84.0" text="35" />
+                  <Text fx:id="Bed_over_2" layoutX="1143.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BED" />
+                  <Label fx:id="nominal_tol_2" alignment="CENTER" contentDisplay="CENTER" layoutX="1049.0" layoutY="408.0" prefHeight="39.0" prefWidth="69.0" textAlignment="CENTER" />
+                  <Text fx:id="nominal_text_2" layoutX="972.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nominal tolerated BED(R%) (Gy)" wrappingWidth="256.205078125" />
+                  <Text layoutX="972.0" layoutY="486.0" strokeType="OUTSIDE" strokeWidth="0.0" text="for retreatment. Value also used for the" wrappingWidth="368.833984375" />
+                  <Text layoutX="972.0" layoutY="506.0" strokeType="OUTSIDE" strokeWidth="0.0" text="primary treatment, see publication." wrappingWidth="357.205078125" />
+                  <Label fx:id="Dret_text_2" alignment="CENTER" contentDisplay="CENTER" layoutX="362.0" layoutY="280.0" prefHeight="39.0" prefWidth="69.0" textAlignment="CENTER" />
+                  <Text fx:id="final_2" layoutX="235.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <Text fx:id="final_last_2" layoutX="400.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <Text fx:id="ret_frac_out_2" layoutX="191.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" />
+                  <CheckBox fx:id="dose_select_2" contentDisplay="CENTER" layoutX="635.0" layoutY="520.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="312.0" selected="true" text="Turn off dose adjustments">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </CheckBox>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab fx:id="tab3" closable="false" text="Proton Initial - Photon Retreatment">
+         <content>
+            <AnchorPane id="AnchorPane" fx:id="Anchor_3" cacheShape="false" centerShape="false" prefHeight="560.0" prefWidth="1085.0" scaleShape="false">
+               <children>
+                  <Rectangle fx:id="rect_3" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="57.0" layoutX="483.0" layoutY="419.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="169.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2197ff00" height="124.0" layoutX="1037.0" layoutY="209.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" width="266.0" />
+                  <ScatterChart fx:id="chart1_3" layoutY="14.0" prefHeight="350.0" prefWidth="350.0">
+                     <opaqueInsets>
+                        <Insets bottom="10.0" left="10.0" right="10.0" />
+                     </opaqueInsets>
+                     <xAxis>
+                        <NumberAxis fx:id="CatAxis13" autoRanging="false" label="BED_1(%)" lowerBound="0" side="BOTTOM" tickUnit="10" upperBound="100" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis fx:id="NumAxis13" autoRanging="false" label="BED_2(%)" lowerBound="0" side="LEFT" tickUnit="10" upperBound="100" />
+                     </yAxis>
+                  </ScatterChart>
+                  <LineChart fx:id="chart2_3" animated="false" layoutY="14.0" opacity="0.4" prefHeight="350.0" prefWidth="350.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <xAxis>
+                        <NumberAxis fx:id="CatAxis242" autoRanging="false" label="BED1" lowerBound="0" side="BOTTOM" tickUnit="10" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis fx:id="NumAxis242" autoRanging="false" label="BED_2(%)" lowerBound="0" side="LEFT" tickUnit="10" />
+                     </yAxis>
+                  </LineChart>
+                  <Button fx:id="RdntBtn3_3" layoutX="170.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleRdntBtn3Action" prefHeight="0.0" prefWidth="69.0" text="Rodent Data">
+                     <font>
+                        <Font size="8.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <TextField fx:id="RiskOfMyel_3" alignment="CENTER" layoutX="354.0" layoutY="14.0" prefHeight="39.0" prefWidth="84.0" text="0.1" />
+                  <TextField fx:id="initalDose_3" alignment="CENTER" layoutX="354.0" layoutY="80.0" prefHeight="39.0" prefWidth="84.0" text="40" />
+                  <Text fx:id="Label_InitDose_3" fontSmoothingType="LCD" layoutX="444.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Initial total dose, D(init), (Gy)" wrappingWidth="305.205078125" />
+                  <Text fx:id="numFrac_text_3" layoutX="444.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of initial fractions, n" wrappingWidth="258.205078125" />
+                  <TextField fx:id="NumFrac_3" alignment="CENTER" layoutX="354.0" layoutY="149.0" prefHeight="39.0" prefWidth="84.0" text="20" />
+                  <Text fx:id="Label_initfrac_3" layoutX="444.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Initial dose per fraction (Gy), d = D(init)/n" translateY="2.0" wrappingWidth="343.205078125" />
+                  <Text fx:id="num_ret_frac_3" layoutX="444.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of retreatment fractions, n(r)" wrappingWidth="403.0" />
+                  <TextField fx:id="RetreatFrac_3" alignment="CENTER" layoutX="354.0" layoutY="282.0" prefHeight="39.0" prefWidth="84.0" text="20" />
+                  <Text fx:id="tissue_text_3" layoutX="444.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tissue sensitivity, a/b (Gy)" wrappingWidth="226.205078125" />
+                  <Text layoutX="354.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" wrappingWidth="84.0" />
+                  <Button fx:id="Calculate_3" disable="true" layoutX="479.0" layoutY="418.0" mnemonicParsing="false" opacity="0.3" prefHeight="58.0" prefWidth="176.0" text="Calculate">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Text layoutX="1143.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of years " translateY="3.0" wrappingWidth="168.6279296875" />
+                  <Text layoutX="1143.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Percentage" wrappingWidth="125.0" />
+                  <Text fx:id="Nominaltext32" layoutX="919.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="69.0" />
+                  <Button fx:id="reset_3" layoutX="505.0" layoutY="514.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="125.0" text="Reset Values">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label fx:id="out_3" alignment="CENTER" contentDisplay="CENTER" layoutX="743.0" layoutY="285.0" prefHeight="39.0" prefWidth="69.0" textAlignment="CENTER" />
+                  <Text layoutX="444.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Risk of myelopathy, r (%)" wrappingWidth="203.0" />
+                  <Text fx:id="p_value_3" layoutX="444.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-style: italic;" text="p-value = 0.001" wrappingWidth="191.205078125" />
+                  <Text fx:id="eqn1_text_3" layoutX="47.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="eqn1" wrappingWidth="315.205078125" />
+                  <Text fx:id="eqn2_text_3" layoutX="47.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="eqn2" wrappingWidth="357.205078125" />
+                  <Text fx:id="eqn3_text_3" layoutX="47.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" text="eqn3" wrappingWidth="153.205078125" />
+                  <Button fx:id="key_3" layoutX="1240.0" layoutY="525.0" mnemonicParsing="false" text="Notation">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Text fx:id="initfrac_text_3" layoutX="371.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="51.0" />
+                  <Text fx:id="BEDinit_text_3" layoutX="40.0" layoutY="413.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="58.0" />
+                  <Text fx:id="BED1_text_3" layoutX="171.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" />
+                  <Text fx:id="BEDR_text_3" layoutX="276.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" />
+                  <Text fx:id="BEDret_text_3" layoutX="44.0" layoutY="466.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="51.0" />
+                  <Text fx:id="BED2_text_3" layoutX="171.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" />
+                  <Text fx:id="BEDR2_TEXT_3" layoutX="280.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" />
+                  <Text layoutX="1143.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="before next dose, t" translateY="-1.0" wrappingWidth="168.6279296875" />
+                  <Text layoutX="1144.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="conservative factor, C" translateY="4.0" wrappingWidth="176.0" />
+                  <Text fx:id="warn_bed_3" fill="#f80000" layoutX="47.0" layoutY="531.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WARNING: INITIAL DOSE OVER TOLERANCE" underline="true" visible="false" wrappingWidth="357.205078125" />
+                  <Text fx:id="p_high_3" fill="#f50808" layoutX="47.0" layoutY="532.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WARNING: RISK GREATER THAN 99.9%" underline="true" visible="false" wrappingWidth="357.205078125" />
+                  <Text fx:id="p_low_3" fill="#f81111" layoutX="47.0" layoutY="531.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WARNING: RISK LESS THAN 0.001%" underline="true" visible="false" wrappingWidth="357.205078125" />
+                  <CheckBox fx:id="RBE_CHECKBOX_3" alignment="CENTER" layoutX="766.0" layoutY="23.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="261.0" text="Fix treatment RBE at 1.1" textAlignment="CENTER" />
+                  <TextField fx:id="letx_3" alignment="CENTER" layoutX="735.0" layoutY="149.0" prefHeight="39.0" prefWidth="84.0" text="1" />
+                  <Text fx:id="letx_text_3" layoutX="823.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LET_x (KeV/um)" wrappingWidth="216.6708984375" />
+                  <TextField fx:id="letu_3" alignment="CENTER" layoutX="735.0" layoutY="81.0" prefHeight="39.0" prefWidth="84.0" text="30.5" />
+                  <Text fx:id="letu_text_3" layoutX="823.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LET_U (KeV/um)" wrappingWidth="180.0380859375" />
+                  <Text fx:id="RBE_text_3" layoutX="817.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estimated RBE for proton initial treatment" translateX="6.0" translateY="-6.0" wrappingWidth="179.4111328125" />
+                  <TextField fx:id="NumOfYears_3" alignment="CENTER" layoutX="1050.0" layoutY="219.0" prefHeight="39.0" prefWidth="84.0" promptText="2" />
+                  <TextField fx:id="Percentage_3" alignment="CENTER" layoutX="1050.0" layoutY="285.0" prefHeight="39.0" prefWidth="84.0" promptText="0" />
+                  <Text fx:id="Num_Warn_3" layoutX="1040.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Must be a number within [0,5]" translateY="2.0" visible="false" wrappingWidth="272.6708984375" />
+                  <Text fx:id="Per_Warn_3" layoutX="1040.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number must be within [0,20]" translateY="3.0" visible="false" wrappingWidth="271.6708984375" />
+                  <Label fx:id="run_3" alignment="CENTER" layoutX="542.0" layoutY="481.0" prefHeight="21.0" prefWidth="51.0" text="Done" textAlignment="CENTER" visible="false" />
+                  <Text fx:id="letu_warn_3" layoutX="745.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Must be a postive number" visible="false" wrappingWidth="272.6708984375" />
+                  <TextField fx:id="letc_3" alignment="CENTER" layoutX="735.0" layoutY="219.0" prefHeight="39.0" prefWidth="84.0" text="0.22" />
+                  <Text fx:id="letc_text_3" layoutX="823.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LET_C(KeV/um)" translateY="-7.0" wrappingWidth="210.79443359375" />
+                  <Text fx:id="letc_warn_3" layoutX="745.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Must be a number within [0.2,0.6]" visible="false" wrappingWidth="245.6708984375" />
+                  <Text fx:id="letx_warn_3" layoutX="745.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Must be a postive number" visible="false" wrappingWidth="245.6708984375" />
+                  <TextField fx:id="s0_3" alignment="CENTER" layoutX="1050.0" layoutY="14.0" prefHeight="39.0" prefWidth="84.0" text="0.15" />
+                  <Text fx:id="s0_text_3" layoutX="1141.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="s0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="s1_3" alignment="CENTER" layoutX="1050.0" layoutY="81.0" prefHeight="39.0" prefWidth="84.0" text="0.1" />
+                  <Text fx:id="s1_text_3" layoutX="1130.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="s1" textAlignment="CENTER" wrappingWidth="36.3408203125">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="bed_3" alignment="CENTER" layoutX="1050.0" layoutY="149.0" prefHeight="39.0" prefWidth="84.0" text="35" />
+                  <Text fx:id="Bed_over_3" layoutX="1143.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BED" />
+                  <Label fx:id="nominal_tol_3" alignment="CENTER" contentDisplay="CENTER" layoutX="1049.0" layoutY="408.0" prefHeight="39.0" prefWidth="69.0" textAlignment="CENTER" />
+                  <Text fx:id="nominal_text_3" layoutX="972.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nominal tolerated BED(R%) (Gy)" wrappingWidth="256.205078125" />
+                  <Text layoutX="972.0" layoutY="486.0" strokeType="OUTSIDE" strokeWidth="0.0" text="for retreatment. Value also used for the" wrappingWidth="368.833984375" />
+                  <Text layoutX="972.0" layoutY="506.0" strokeType="OUTSIDE" strokeWidth="0.0" text="primary treatment, see publication." wrappingWidth="357.205078125" />
+                  <Text fx:id="ret_frac_out_3" layoutX="200.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" />
+                  <Text fx:id="final_3" layoutX="235.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <Text fx:id="Dret_text_3" boundsType="LOGICAL_VERTICAL_CENTER" layoutX="354.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="40.0" />
+                  <Text fx:id="final_last_3" layoutX="400.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab fx:id="tab4" closable="false" text="Proton Initial - Proton Retreatment">
+         <content>
+            <AnchorPane id="AnchorPane" fx:id="Anchor_4" cacheShape="false" centerShape="false" prefHeight="560.0" prefWidth="1055.0" scaleShape="false">
+               <children>
+                  <Rectangle fx:id="rect_4" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="57.0" layoutX="482.0" layoutY="418.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="169.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2197ff00" height="130.0" layoutX="1027.0" layoutY="404.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" width="312.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="57.0" layoutX="1027.0" layoutY="336.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" width="312.0" />
+                  <ScatterChart fx:id="chart1_4" layoutY="14.0" prefHeight="350.0" prefWidth="350.0">
+                     <opaqueInsets>
+                        <Insets bottom="10.0" left="10.0" right="10.0" />
+                     </opaqueInsets>
+                     <xAxis>
+                        <NumberAxis fx:id="CatAxis24" autoRanging="false" label="BED_1(%)" lowerBound="0" side="BOTTOM" tickUnit="10" upperBound="100" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis fx:id="NumAxis24" autoRanging="false" label="BED_2(%)" lowerBound="0" side="LEFT" tickUnit="10" upperBound="100" />
+                     </yAxis>
+                  </ScatterChart>
+                  <LineChart fx:id="chart2_4" animated="false" layoutY="14.0" opacity="0.4" prefHeight="350.0" prefWidth="350.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <xAxis>
+                        <NumberAxis fx:id="CatAxis14" autoRanging="false" label="BED1" lowerBound="0" side="BOTTOM" tickUnit="10" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis fx:id="NumAxis14" autoRanging="false" label="BED_2(%)" lowerBound="0" side="LEFT" tickUnit="10" />
+                     </yAxis>
+                  </LineChart>
+                  <Button fx:id="RdntBtn3_4" layoutX="170.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleRdntBtn4Action" prefHeight="0.0" prefWidth="69.0" text="Rodent Data">
+                     <font>
+                        <Font size="8.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <TextField fx:id="RiskOfMyel_4" alignment="CENTER" layoutX="354.0" layoutY="14.0" prefHeight="39.0" prefWidth="84.0" text="0.1" />
+                  <TextField fx:id="initalDose_4" alignment="CENTER" layoutX="354.0" layoutY="80.0" prefHeight="39.0" prefWidth="84.0" text="40" />
+                  <Text fx:id="Label_InitDose_4" fontSmoothingType="LCD" layoutX="444.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Initial proton dose per fraction, D(init), (Gy)" wrappingWidth="298.205078125" />
+                  <Text fx:id="numFrac_text_4" layoutX="444.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of initial fractions, n" wrappingWidth="251.205078125" />
+                  <TextField fx:id="NumFrac_4" alignment="CENTER" layoutX="354.0" layoutY="149.0" prefHeight="39.0" prefWidth="84.0" text="20" />
+                  <Text fx:id="Label_initfrac_4" layoutX="444.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Initial total proton dose ,D(init), (Gy)" translateY="7.0" wrappingWidth="343.205078125" />
+                  <Text fx:id="num_ret_frac_4" layoutX="444.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of retreatment fractions, n(r)" wrappingWidth="403.0" />
+                  <Text fx:id="tissue_text_21" layoutX="444.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tissue sensitivity, a/b (Gy)" wrappingWidth="226.205078125" />
+                  <Text layoutX="354.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" wrappingWidth="84.0" />
+                  <Button fx:id="Calculate_4" disable="true" layoutX="479.0" layoutY="418.0" mnemonicParsing="false" opacity="0.3" prefHeight="58.0" prefWidth="176.0" text="Calculate">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Text layoutX="1130.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of years " wrappingWidth="168.6279296875" />
+                  <Text layoutX="1130.0" layoutY="499.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Percentage" wrappingWidth="81.0" />
+                  <Text fx:id="nom_text_21" layoutX="1130.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estimated RBE for proton retreatment" wrappingWidth="137.205078125" />
+                  <Text fx:id="Nominaltext311" layoutX="902.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="69.0" />
+                  <Button fx:id="reset_4" layoutX="505.0" layoutY="514.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="125.0" text="Reset Values">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label fx:id="out_4" alignment="CENTER" contentDisplay="CENTER" layoutX="1049.0" layoutY="280.0" prefHeight="39.0" prefWidth="69.0" textAlignment="CENTER" />
+                  <Text layoutX="444.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Risk of myelopathy, r (%)" wrappingWidth="203.0" />
+                  <Text fx:id="p_value_4" layoutX="444.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-style: italic;" text="p-value = 0.001" wrappingWidth="191.205078125" />
+                  <Text fx:id="eqn1_text_4" layoutX="47.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="eqn1" wrappingWidth="315.205078125" />
+                  <Text fx:id="eqn2_text_4" layoutX="47.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="eqn2" wrappingWidth="357.205078125" />
+                  <Text fx:id="eqn3_text_4" layoutX="47.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" text="eqn3" wrappingWidth="150.205078125" />
+                  <Text fx:id="initfrac_text_4" layoutX="371.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="51.0" />
+                  <Text fx:id="BEDinit_text_4" layoutX="40.0" layoutY="413.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="58.0" />
+                  <Text fx:id="BED1_text_4" layoutX="171.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" />
+                  <Text fx:id="BEDR_text_4" layoutX="276.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" />
+                  <Text fx:id="BEDret_text_4" layoutX="44.0" layoutY="466.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="51.0" />
+                  <Text fx:id="BED2_text_4" layoutX="171.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" />
+                  <Text fx:id="BEDR2_TEXT_4" layoutX="280.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" />
+                  <Text layoutX="1130.0" layoutY="449.0" strokeType="OUTSIDE" strokeWidth="0.0" text="before next dose, t" wrappingWidth="168.6279296875" />
+                  <Text layoutX="1130.0" layoutY="516.0" strokeType="OUTSIDE" strokeWidth="0.0" text="conservative factor, C" wrappingWidth="176.0" />
+                  <Text fx:id="warn_bed_4" fill="#f80000" layoutX="47.0" layoutY="534.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WARNING: INITIAL DOSE OVER TOLERANCE" underline="true" visible="false" wrappingWidth="357.205078125" />
+                  <Text fx:id="p_high_4" fill="#f50808" layoutX="47.0" layoutY="535.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WARNING: RISK GREATER THAN 99.9%" underline="true" visible="false" wrappingWidth="357.205078125" />
+                  <Text fx:id="p_low_4" fill="#f81111" layoutX="47.0" layoutY="534.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WARNING: RISK LESS THAN 0.001%" underline="true" visible="false" wrappingWidth="357.205078125" />
+                  <CheckBox fx:id="RBE_CHECKBOX_4" alignment="CENTER" layoutX="766.0" layoutY="3.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="224.0" text="Fix treatment RBE at 1.1" textAlignment="CENTER" wrapText="true" />
+                  <TextField fx:id="DHIGH_4" alignment="CENTER" layoutX="1040.0" layoutY="345.0" prefHeight="39.0" prefWidth="84.0" promptText="2" />
+                  <Text fx:id="d_hi_4" layoutX="1130.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="d_hi (Gy)" wrappingWidth="213.6708984375" />
+                  <TextField fx:id="letx_4" alignment="CENTER" layoutX="735.0" layoutY="149.0" prefHeight="39.0" prefWidth="84.0" text="1" />
+                  <Text fx:id="letx_text_4" layoutX="823.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LET_x (KeV/um)" wrappingWidth="192.6708984375" />
+                  <TextField fx:id="letu_4" alignment="CENTER" layoutX="735.0" layoutY="81.0" prefHeight="39.0" prefWidth="84.0" text="30.5" />
+                  <Text fx:id="letu_text_4" layoutX="823.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LET_U (KeV/um)" wrappingWidth="212.0380859375" />
+                  <Text fx:id="ProDose_4" layoutX="358.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <TextField fx:id="NumOfYears_4" alignment="CENTER" layoutX="1040.0" layoutY="415.0" prefHeight="39.0" prefWidth="84.0" promptText="2" />
+                  <TextField fx:id="Percentage_4" alignment="CENTER" layoutX="1040.0" layoutY="485.0" prefHeight="39.0" prefWidth="84.0" promptText="0" translateX="1.0" />
+                  <Text fx:id="Num_Warn_4" layoutX="1044.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Must be a number within [0,5]" translateX="-4.0" translateY="3.0" visible="false" wrappingWidth="272.6708984375" />
+                  <Text fx:id="Per_Warn_4" layoutX="1039.0" layoutY="552.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number must be within [0,20]" translateX="2.0" translateY="-4.0" visible="false" wrappingWidth="271.6708984375" />
+                  <Label fx:id="run_4" alignment="CENTER" layoutX="542.0" layoutY="482.0" prefHeight="21.0" prefWidth="51.0" text="Done" textAlignment="CENTER" visible="false" />
+                  <Text fx:id="letu_warn_4" layoutX="745.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Must be a postive number" visible="false" wrappingWidth="272.6708984375" />
+                  <TextField fx:id="letc_4" alignment="CENTER" layoutX="735.0" layoutY="219.0" prefHeight="39.0" prefWidth="84.0" text="0.22" translateY="-4.0" />
+                  <Text fx:id="letc_text_4" layoutX="823.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LET_C(KeV/um)" translateY="7.0" wrappingWidth="220.79443359375" />
+                  <Text fx:id="letx_warn_4" layoutX="746.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Must be a postive number" visible="false" wrappingWidth="245.6708984375" />
+                  <TextField fx:id="letu_ret_4" alignment="CENTER" layoutX="1040.0" layoutY="81.0" prefHeight="39.0" prefWidth="84.0" text="30.5" />
+                  <CheckBox fx:id="RBE_RET_CHECKBOX_4" alignment="CENTER" layoutX="1071.0" layoutY="3.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="224.0" text="Fix retreatment RBE at 1.1" textAlignment="CENTER" wrapText="true" />
+                  <TextField fx:id="letx_ret_4" alignment="CENTER" layoutX="1040.0" layoutY="149.0" prefHeight="39.0" prefWidth="84.0" text="1" />
+                  <TextField fx:id="letc_ret_4" alignment="CENTER" layoutX="1040.0" layoutY="219.0" prefHeight="39.0" prefWidth="84.0" text="0.22" translateY="-4.0" />
+                  <Text fx:id="letu_ret_text_4" layoutX="1130.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LET_U (KeV/um)" wrappingWidth="213.0380859375" />
+                  <Text fx:id="letx_ret_text_4" layoutX="1130.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LET_x (KeV/um)" wrappingWidth="210.6708984375" />
+                  <Text fx:id="letc_ret_text_4" layoutX="1130.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LET_C(KeV/um)" wrappingWidth="212.79443359375" />
+                  <Label fx:id="RBE_IN_TEXT_4" alignment="CENTER" contentDisplay="CENTER" layoutX="743.0" layoutY="280.0" prefHeight="39.0" prefWidth="69.0" textAlignment="CENTER" />
+                  <Text fx:id="nom_text_4" layoutX="827.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estimated RBE for initial proton treatment" wrappingWidth="187.205078125" />
+                  <Text fx:id="letx_warn_4" layoutX="746.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Must be a postive number" visible="false" wrappingWidth="245.6708984375" />
+                  <Text fx:id="letx_ret_warn_4" layoutX="1041.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Must be a postive number" visible="false" wrappingWidth="245.6708984375" />
+                  <Text fx:id="letu_ret_warn_4" layoutX="1041.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Must be a postive number" visible="false" wrappingWidth="272.6708984375" />
+                  <Text fx:id="letc_warn_4" layoutX="745.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Must be a number within [0.2,0.6]" visible="false" wrappingWidth="245.6708984375" />
+                  <Text fx:id="letc_ret_warn_4" layoutX="1041.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Must be a number within [0.2,0.6]" visible="false" wrappingWidth="245.6708984375" />
+                  <Label fx:id="RETFRAC_WARN_4" layoutX="44.0" layoutY="518.0" prefHeight="21.0" prefWidth="408.0" text="WARNING: RETREATMENT FRACTION LESS THAN ONE" textFill="RED" underline="true" visible="false" />
+                  <TextField fx:id="s0_4" alignment="CENTER" layoutX="735.0" layoutY="345.0" prefHeight="39.0" prefWidth="84.0" text="0.15" />
+                  <Text fx:id="s0_text_4" layoutX="823.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="s0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="s1_4" alignment="CENTER" layoutX="735.0" layoutY="415.0" prefHeight="39.0" prefWidth="84.0" text="0.1" />
+                  <Text fx:id="s1_text_4" layoutX="823.0" layoutY="439.0" strokeType="OUTSIDE" strokeWidth="0.0" text="s1" wrappingWidth="36.3408203125">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="bed_4" alignment="CENTER" layoutX="735.0" layoutY="485.0" prefHeight="39.0" prefWidth="84.0" text="35" />
+                  <Text fx:id="Bed_over_4" layoutX="823.0" layoutY="510.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BED" />
+                  <Label fx:id="Dret_text_4" alignment="CENTER" contentDisplay="CENTER" layoutX="362.0" layoutY="280.0" prefHeight="39.0" prefWidth="69.0" textAlignment="CENTER" />
+                  <Text fx:id="ret_frac_out_4" layoutX="191.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" />
+                  <Text fx:id="final_4" layoutX="235.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <Text fx:id="final_last_4" layoutX="400.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <CheckBox fx:id="dose_select_4" contentDisplay="CENTER" layoutX="635.0" layoutY="520.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="340.0" selected="true" text="Turn off dose adjustments">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </CheckBox>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+   </tabs>
+</TabPane>
