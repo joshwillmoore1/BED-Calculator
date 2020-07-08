@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="374.0" prefWidth="496.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="firstscene.Splash_screenController">
+   <children>
+      <Rectangle fx:id="rectangle" arcWidth="5.0" fill="#030303c8" height="374.0" stroke="BLACK" strokeType="INSIDE" width="568.0" />
+      <Text fill="WHITE" layoutX="171.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BED Calculator" textAlignment="CENTER">
+         <font>
+            <Font name="Quivira" size="35.0" />
+         </font>
+      </Text>
+      <CheckBox fx:id="agree_box" layoutX="164.0" layoutY="233.0" mnemonicParsing="false" onAction="#handleCheck" prefHeight="49.0" prefWidth="249.0" text="I understand and wish to proceed" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Quivira" size="14.0" />
+         </font>
+      </CheckBox>
+      <Text fill="WHITE" layoutX="69.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Any computational issues related to the use of the GUI can be reported on the appropriate GitHub page under &quot;issues&quot;. Note Thomas E. Woolley and Joshua W. Moore are mathematicians and are unable to supply any help on any particular medical application. These should be directed to the local clinical specialist of the user." wrappingWidth="429.9863638281822">
+         <font>
+            <Font name="Quivira" size="14.0" />
+         </font>
+      </Text>
+      <Line endX="488.0" endY="7.62939453125E-6" layoutX="78.0" layoutY="82.0" startX="-78.00000762939453" stroke="WHITE" strokeWidth="2.0" />
+      <Line endX="-16.191463470458984" endY="-115.0" layoutX="77.0" layoutY="115.0" startX="-16.191463470458984" startY="258.0" stroke="WHITE" strokeWidth="2.0" />
+      <Line endX="220.50003051757812" endY="-118.00000762939453" layoutX="286.0" layoutY="118.0" startX="220.50003051757812" startY="254.21206665039062" stroke="WHITE" strokeWidth="2.0" />
+      <Text fill="WHITE" layoutX="65.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Version 2.1">
+         <font>
+            <Font name="Quivira" size="13.0" />
+         </font>
+      </Text>
+      <Line endX="488.0" endY="7.62939453125E-6" layoutX="78.0" layoutY="293.0" startX="-78.00000762939453" stroke="WHITE" strokeWidth="2.0" />
+      <Label fx:id="loadingLabel" layoutX="258.0" layoutY="308.0" text="Loading..." textAlignment="CENTER" textFill="#fffefe">
+         <font>
+            <Font name="Quivira" size="13.0" />
+         </font>
+      </Label>
+      <ProgressBar fx:id="prog_bar" layoutX="184.0" layoutY="332.0" prefWidth="200.0" progress="0.0">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow blurType="GAUSSIAN" />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </ProgressBar>
+   </children>
+</AnchorPane>
